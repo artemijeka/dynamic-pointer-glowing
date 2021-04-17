@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cтекломорфизм и светящийся динамический указатель | Steclomorphism and glowing dynamic pointer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+  <nav class="dynamic-pointer-glowing">
+    <ul class="dynamic-pointer-glowing__list">
+
+      <li class="dynamic-pointer-glowing__item --first">
+        <a href="" class="dynamic-pointer-glowing__link">Главная</a>
+      </li>
+      <li class="dynamic-pointer-glowing__item">
+        <a href="" class="dynamic-pointer-glowing__link">О нас</a>
+      </li>
+      <li class="dynamic-pointer-glowing__item">
+        <a href="" class="dynamic-pointer-glowing__link">Портфолио</a>
+      </li>
+      <li class="dynamic-pointer-glowing__item">
+        <a href="" class="dynamic-pointer-glowing__link">Команда</a>
+      </li>
+      <li class="dynamic-pointer-glowing__item --last">
+        <a href="" class="dynamic-pointer-glowing__link">Контакты</a>
+      </li>
+      <span id="dynamicPointerGlowing"></span>
+
+    </ul>
+  </nav>
+
+  <script>
+    var dynamicPointerGlowing = document.querySelector('#dynamicPointerGlowing');
+    var dynamicPointerGlowingLink = document.querySelectorAll('.dynamic-pointer-glowing__link');
+
+
+    dynamicPointerGlowingLink.forEach(function(link) {
+      link.addEventListener('mousemove', function (e) {
+        moveIndicator(e.target, dynamicPointerGlowing);
+      });
+    });
+
+
+    function moveIndicator(e, marker) {
+      marker.style.left = e.offsetLeft + 'px';
+      marker.style.width = e.offsetWidth + 'px';
+    }
+  </script>
+
+
+
+</body>
+
+</html>
